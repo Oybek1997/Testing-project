@@ -12,6 +12,9 @@
                 <span class="invalid-feedback">{{ $message }}</span>
                 @enderror
             </div>
+            @if($errors->any())
+                {!! implode('', $errors->all('<div>:message</div>')) !!}
+            @endif
             <button type="submit" class="btn btn-success">Create</button>
         </form>
     </div>
